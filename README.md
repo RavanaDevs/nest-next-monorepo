@@ -110,7 +110,9 @@ The boundaries are enforced by `no-restricted-imports` zones in `apps/api/eslint
 `pnpm --filter api lint` runs with `--max-warnings 0`, so a violation fails the build rather than
 scrolling past.
 
-Reasoning and the decisions that shaped it: `docs/adr/0001-layered-modules.md`.
+Diagrams of all of this — system context, the workspace graph, the layering, an
+authenticated request, and the shutdown sequence: `docs/ARCHITECTURE.md`. Reasoning and the
+decisions that shaped it: `docs/adr/0001-layered-modules.md`.
 
 ### Adding a domain module
 
@@ -290,6 +292,9 @@ Honest about what is not finished:
 
 ## Documentation
 
+- `docs/ARCHITECTURE.md` — eight diagrams, outside in: system context, workspace and build
+  order, dependency direction, a module's ports and adapters, the auth strategy seam, an
+  authenticated request, user-record sync, and graceful shutdown
 - `docs/adr/0001-layered-modules.md` — why the API is laid out the way it is, and what would
   justify reversing each decision
 - `docs/RELEASING.md` — how versioning works and why each setting is what it is
